@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentorship & Community Program</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--main-color);
+      color: var(--secondary-color);
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: black;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+    }
+
+    .mentorship,
+    .community {
+      cursor: pointer;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: gray;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .platform-options {
+      background-color: var(--secondary);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .platform-options button {
+      margin: 5px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--accent);
+      color: var(--secondary);
+    }
+
+    .selected-platform {
+      color: var(--accent);
+      margin-top: 20px;
+    }
+
+    .recommendations {
+      margin-top: 20px;
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html">Go back</a>
+  <div class="container">
+    <h1>Welcome to our Mentorship & Community Program</h1>
+    <div class="options">
+      <div class="mentorship" onclick="showPlatformPopup('mentorship')">Mentors, Professionals, and Communities</div>
+
+    </div>
+  </div>
+
+  <div class="popup" id="platformPopup">
+    <div class="platform-options">
+      <p>Select a platform:</p>
+      <button onclick="selectPlatform('Instagram')">Instagram</button>
+      <button onclick="selectPlatform('Telegram')">Telegram</button>
+      <button onclick="selectPlatform('WhatsApp')">WhatsApp</button>
+
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <div class="selected-platform" id="selectedPlatform">
+  </div>
+
+  <div class="recommendations" id="recommendations">
+  </div>
+
+  <script>
+    function showPlatformPopup(type) {
+      const popup = document.getElementById('platformPopup');
+      popup.style.display = 'flex';
+
+    }
+
+    function selectPlatform(platform) {
+      const selectedPlatformDiv = document.getElementById('selectedPlatform');
+      selectedPlatformDiv.innerHTML = `<p>You've selected ${platform}</p>`;
+
+      const recommendationsDiv = document.getElementById('recommendations');
+      recommendationsDiv.innerHTML = getRecommendations(platform);
+    }
+
+    function getRecommendations(platform) {
+      if (platform === 'Instagram') {
+        return `<h3>Instagram Mentors & Communities:</h3>
+                <p><strong><center>Mentor:</strong> @LucasFil, a Communication development grad with 10+ years of experience.</p>
+                </center><h3>Communities:</h3><p>GrowCom<br>Dissafix<br>The Unheard</p>`;
+      } else if (platform === 'Telegram') {
+        return `<h3>Telegram ideal mentor:</h3>
+                <p><strong><center>Mentor:</strong> Zoey Lizz, a Communication development grad with 5 years of experience.</p>
+                </center><h3>Communities:</h3><p>The Torch</p>`;
+      } else if (platform === 'WhatsApp') {
+        return `<h3>WhatsApp ideal mentor</h3>
+                <p><strong><center>Mentor:</strong> Nicolas Armitage, a Communication development grad with 12+ years of experience.</p>
+                </center><h3>Communities:</h3><p>Communirizz</p>`;
+      } else {
+        return "<p>No recommendations available for this platform yet.</p>";
+      }
+    }
+
+    function closePopup() {
+      const popup = document.getElementById('platformPopup');
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comdoc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+        
+        button {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Comdoc - Share and Learn!</h1>
+    <p>A feature by Comprove(indev)</p>
+
+
+    <section>
+        <h2>Community Testimonials</h2>
+        <button onclick="openModal()">Add Testimonial</button>
+
+        <div id="testimonialModal" class="modal">
+            <div class="modal-content">
+                <span onclick="closeModal()" style="float: right; cursor: pointer;">&times;</span>
+                <h3>Add Testimonial</h3>
+                <textarea placeholder="Testimonial Details" name="testimonialDetails"></textarea>
+                <button onclick="saveTestimonial()">Save Testimonial</button>
+            </div>
+        </div>
+
+        <ul id="testimonialList">
+            <li>
+                <h3>User Testimonial 1</h3>
+                <p>"The Comdoc feature helped me understand various communication barriers and how to overcome them. Highly recommended!"</p>
+            </li>
+            <li>
+                <h3>User Testimonial 2</h3>
+                <p>"I found great insights about effective communication through the Comdoc community. Amazing resource!"</p>
+            </li>
+
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Documentation on Communication Development</h2>
+
+        <div>
+            <h3>Overview of meanings</h3>
+            <ul>
+                <li><h3> Explanation of Open Communication <br></h3>                  <p>-Open communication is the ability to express your thoughts freely while interacting with other people. In a workplace, it refers to the ability of employees to share and receive feedback, provide ideas and suggestions, and raise concerns, which makes them active participants in the work process.</p><a href="https://www.joinblink.com/intelligence/open-communication-importance#:~:text=implementing%20open%20communication.-,What%20is%20open%20communication%3F,share%20their%20feedback%20and%20opinions.">Source on joinblink</a></li>
+                <br>
+                <li><h3>What is Development Communication?<br></h3>- Development communication or Communication development refers to the use of communication to facilitate social development. Development communication engages stakeholders and policy makers, establishes conducive environments, assesses risks and opportunities and promotes information exchange to create positive social change via sustainable development. <a href="https://en.m.wikipedia.org/wiki/Development_communication">Source on Wikipedia</a></li>
+                <br>
+            </ul>
+            
+        </div>
+
+        <div>
+            <h3>Videos</h3>
+            <ul>
+                <li><a href="https://youtu.be/5r6TUfW_DI8?si=ZlfgOnJ-YZTFp_bA">What is development communication?</a></li>
+                <li><a href="https://youtu.be/3cN4yI4VsGA?si=cjSGeWGBW9VBEVXW">Development communication</a></li>
+                <li><a href="https://youtu.be/hjvmAUbfXdw?si=CzwwO1l_zFAeaSSb">DISABILITY: How You See Me</a></li>
+                <li><a href="https://youtu.be/W6c6JLbczC8?si=DuNubO2ustcePe93">How to Treat a Person with Disabilites, According to People with Disabilities </a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Sites</h3>
+            <ul>
+                <li><a href="https://www.nln.org/education/teaching-resources/professional-development-programsteaching-resourcesace-all/ace-d/additional-resources/communicating-with-people-with-disabilities-e030c45c-7836-6c70-9642-ff00005f0421">Communicating with people with disabilities</a></li>
+                <li><a href="https://engagedly.com/blog/how-to-communicate-effectively-in-the-workplace-for-introverts/">Communication Skills for Introverts for Workplace Success</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        function openModal() {
+            document.getElementById('testimonialModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('testimonialModal').style.display = 'none';
+        }
+
+        function saveTestimonial() {
+            const details = document.querySelector('textarea[name="testimonialDetails"]').value;
+
+            const testimonialList = document.getElementById('testimonialList');
+            const newTestimonial = document.createElement('li');
+            newTestimonial.innerHTML = `<h3>New Testimonial</h3><p>${details}</p>`;
+            testimonialList.appendChild(newTestimonial);
+
+            closeModal();
+        }
+    </script>
+</body>
+</html>
+
+
