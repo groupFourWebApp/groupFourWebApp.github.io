@@ -4,16 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comprove</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../assets/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
   
 </head>
 <body>
-  <header id="hero-heading">
-    <div class="hero-img-h2">
-      <img src="Hero-logo.png" alt="Hero-logo.png">
-      <h2>Comprove</h2>
+      <button class="chatbot-toggler">
+
+      <span class="material-symbols-rounded">^</span>
+
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot" id="chatbot">
+      
+      
+      <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      
+      
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <p>Hi there! How can I help you today?</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
+      
     </div>
+    
+  
+    
+ 
+      <header id="hero-heading">
+    <div class="hero-img-h2">
+      <a href="#"><img src="./images/Hero-logo.png" alt="Hero-logo.png" ></a>
+     <h2>Comprove</h2>
+    </div>
+   
+    
+ 
 
     <nav>
       <div>
@@ -48,7 +85,7 @@
   
   <main id="main">
      <div id="Main-image">
-       <img srcset="Main-image.png" src="Main-image.png" alt="Main-image.png">
+       <img srcset="./images/Main-image.png" src="Main-image.png" alt="Main-image.png">
        
      </div>
      
@@ -85,6 +122,7 @@
     <a class="no-account" href="#">Don't have an account?</a>
   </div>
   </main>
+  
 
 
   <section id="Features">
@@ -95,9 +133,8 @@
       <i class='bx bx-check-circle'></i>
       <h3>It's safe! </h3>
       <p>We implement account creation to provide safeability and confidence to our users.</p>
-
-     
     </div>
+    
           <div class="its-in-hand">
         <i class='bx bx-shape-polygon' ></i>
         <h3 class="fade-in">It's in hand!</h3>
@@ -107,8 +144,7 @@
            <div class="its-creative">
           <i class='bx bx-bulb' ></i>
         <h3 class="fade-in">It's Creative!</h3>
-        <p>Offers both community and self based approach of collaborations, factual and helpful resources to help both individuals and PWD increase relevant knowledge, fostering not only communication enhancement but also connection with other people.</p>
-        
+        <p>Offers both community and self based approach of collaborations, factual and helpful resources to help both individuals and PWD increase relevant knowledge, fostering not only communication enhancement but also connection </div>with other people.</p>
          </div>
          
          <div class="its-wide-and-free">
@@ -117,6 +153,7 @@
            <p>A never before feature that provides interactive recommendations ecosystem of apps such as instagram, whatsapp, and telegram. Through comprehensive support and collaborations with them, we ensure the well-being and mainly for the development of communication.
           </p>
          </div>
+         
   </section>
   
   <section id="features-how-does">
@@ -148,6 +185,14 @@
             </div>
           </div>
           
+           <div class="individuals">
+            <span class="how-does-child-one">4</span>
+            <div class="individuachild">
+             <p>With the approach of modern technology. We implemented the usage of new innovations such as the new chatbot feature using Open AI latest Chatgpt free API. This will enable to interact with user's needs and knowledge prompts without ever leaving the website. <a href="#chatbot">Use now with the floating round button</a></p>
+
+            </div>
+          </div>
+                 
           
       </div>
     </div>
@@ -158,8 +203,8 @@
     <div class="about-container">
       <h2>About Us</h2>
       <div class="inner-container">
-        <img src="Hero-logo.png" alt="Hero-logo.png">
-        <p><span>Comprove</span> is an open source web application providing a space for all. The main goal is being a tool to assist and be an open place for education, assistance, and collaboration for those who in need in terms of communication development or enhancement, providing mainly knowledge and support environment  for every user whether pwd's, every age, or whatever state in life. We've got you covered through collaborations of the community or self-assessment with curated lists of topic, documentation, and other resources for your needs. With the modern approach of technology, we will utilize this approach through this web app. Remember, A small progress is still a progress, every step in the way counts.</p>
+        <img src="./images/Hero-logo.png" alt="Hero-logo.png">
+        <p><span>Comprove</span> is an open source web application providing a space for all. The main goal is being free and open place for education, assistance, and collaboration for those who in need in terms of communication development, providing enlightenment of self-discovery and self-worth of every individual whether pwd's, every age, or whatever state in life. We've got you covered through collaborations of the community or self-assessment with curated lists of topic, documentation, and other resources for your needs. With the modern approach of technology, we will utilize this approach through this web app. Remember, A small step or progress is still a progress, just be open and free.</p>
       </div>
 
     </div>
@@ -182,12 +227,12 @@
   <footer id="contactUs">
     <div class="inner-contact-container">
       <div class="icon-logo">
-      <img srcset="Hero-logo.png" src="Hero-logo.png" alt="Hero-logo.png" class="image-logo">
+      <img srcset="./images/Hero-logo.png" src="Hero-logo.png" alt="Hero-logo.png" class="image-logo">
         <h4>Comprove</h4>
       </div>
       <div class="freedom">
               <p>You have the freedom.</p>
-      <a href="https://www.facebook.com/citycollegeofsjdm"><img src="find-logo.jpg" alt="Hero-logo.png">Contact Us!</a>
+      <a href="https://www.facebook.com/citycollegeofsjdm"><img src="./images/find-logo.jpg" alt="Hero-logo.png">Contact Us!</a>
 
       </div>
 
@@ -204,7 +249,7 @@
   </footer>
 
 
-  <script src="main.js">
+  <script src="./assets/main.js">
    
   </script>
 </body>
