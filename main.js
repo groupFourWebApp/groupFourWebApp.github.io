@@ -195,3 +195,36 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+
+
+
+
+
+
+    var customModal = document.getElementById('customModal');
+    var customOverlay = document.getElementById('customOverlay');
+
+
+    var openCustomModalLink = document.getElementById('openCustomModal');
+    var closeCustomModalBtn = document.getElementById('closeCustomModal');
+
+
+    function openCustomModal() {
+        customModal.style.display = 'block';
+        customOverlay.style.display = 'block';
+    }
+
+
+    function closeCustomModal() {
+        customModal.style.display = 'none';
+        customOverlay.style.display = 'none';
+    }
+
+
+    openCustomModalLink.addEventListener('click', openCustomModal);
+
+
+    closeCustomModalBtn.addEventListener('click', closeCustomModal);
+
+    customOverlay.addEventListener('click', closeCustomModal);
