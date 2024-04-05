@@ -3,7 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Mentorship & Community Program</title>
+              <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+    
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+     font-family: 'Poppins', sans-serif;
+    }
+    :root {
+  --main-color: #f6f9f9;
+  --secondary-color: #000;
+  --accent-color: #e1e2e3;
+  --primary: #49bfc1;
+  --secondary: #D3FFFF;
+  --accent: #42F7FA;
+}
 
     body {
       font-family: Arial, sans-serif;
@@ -11,16 +33,22 @@
       padding: 0;
       background-color: var(--main-color);
       color: var(--secondary-color);
+            background: url("/assets/testimonialBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+
     }
 
     .container {
       text-align: center;
-      margin-top: 100px;
+      margin-top: 60px;
     }
 
     h1 {
       margin-bottom: 30px;
-      color: black;
+      color: white;
+      font-weight: 800;
     }
 
     .options {
@@ -45,13 +73,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: white;
       justify-content: center;
       align-items: center;
+      backdrop-filter: blur(3px);
     }
 
     .platform-options {
-      background-color: var(--secondary);
+      width: 280px;
+      background-color: var(--main-color);
       padding: 20px;
       border-radius: 10px;
     }
@@ -65,20 +94,64 @@
       background-color: var(--accent);
       color: var(--secondary);
     }
+    
+    .platform-options button.insta {
+      background: #8a3ab9;
+      color: white;
+    }
+    
+    .platform-options button.tele {
+      background: #0088cc;
+      color: white;
+    }
+    
+    .platform-options button.what {
+      background: #25D366;
+      color: white;
+    }
 
     .selected-platform {
-      color: var(--accent);
+      color: white;
+      font-weight: 700;
       margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      letter-spacing: 3px;
+            margin: 15px;
+            gap: 20px;
     }
 
     .recommendations {
       margin-top: 20px;
-      color: var(--secondary);
+            display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-weight: 500;
+            margin: 15px;
+            gap: 15px;
     }
+    
+            a#goBack, i{
+padding: 15px 15px;
+  border-radius: 15px;
+  margin: .780rem .900rem;
+  background: var(--primary);
+  border: none;
+  color: #000000;
+  transition: all .34s ease;
+        }
+        
+        a.goBack:hover {
+          transform: translateY(-10%);
+  box-shadow: 5px 5px 25px #A0FDFF;
+        }
   </style>
 </head>
 <body>
-  <a href="index.html">Go back</a>
+
   <div class="container">
     <h1>Welcome to our Mentorship & Community Program</h1>
     <div class="options">
@@ -90,9 +163,9 @@
   <div class="popup" id="platformPopup">
     <div class="platform-options">
       <p>Select a platform:</p>
-      <button onclick="selectPlatform('Instagram')">Instagram</button>
-      <button onclick="selectPlatform('Telegram')">Telegram</button>
-      <button onclick="selectPlatform('WhatsApp')">WhatsApp</button>
+      <button onclick="selectPlatform('Instagram')" class="insta">Instagram</button>
+      <button onclick="selectPlatform('Telegram')" class="tele">Telegram</button>
+      <button onclick="selectPlatform('WhatsApp')" class="what">WhatsApp</button>
 
       <button onclick="closePopup()">Close</button>
     </div>
@@ -103,6 +176,9 @@
 
   <div class="recommendations" id="recommendations">
   </div>
+  
+  
+    <a id="goBack" href="index.html">Go back<i class='bx bx-arrow-back' ></i></a>
 
   <script>
     function showPlatformPopup(type) {
@@ -121,16 +197,16 @@
 
     function getRecommendations(platform) {
       if (platform === 'Instagram') {
-        return `<h3>Instagram Mentors & Communities:</h3>
+        return `<h3>Instagram Mentors & Communities:<br></h3>
                 <p><strong><center>Mentor:</strong> @LucasFil, a Communication development grad with 10+ years of experience.</p>
                 </center><h3>Communities:</h3><p>GrowCom<br>Dissafix<br>The Unheard</p>`;
       } else if (platform === 'Telegram') {
         return `<h3>Telegram ideal mentor:</h3>
-                <p><strong><center>Mentor:</strong> Zoey Lizz, a Communication development grad with 5 years of experience.</p>
+                <p><strong><center>Mentor:</strong>@ZoeyLizz, a Communication development grad with 5 years of experience.</p>
                 </center><h3>Communities:</h3><p>The Torch</p>`;
       } else if (platform === 'WhatsApp') {
         return `<h3>WhatsApp ideal mentor</h3>
-                <p><strong><center>Mentor:</strong> Nicolas Armitage, a Communication development grad with 12+ years of experience.</p>
+                <p><strong><center>Mentor:</strong>@NicolasArmitage, a Communication development grad with 12+ years of experience.</p>
                 </center><h3>Communities:</h3><p>Communirizz</p>`;
       } else {
         return "<p>No recommendations available for this platform yet.</p>";

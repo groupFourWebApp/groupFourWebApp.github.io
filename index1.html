@@ -3,25 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <title>Comdoc</title>
+            <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+    
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: var(--main-color);
+     font-family: 'Poppins', sans-serif;
+    }
+    :root {
+  --main-color: #f6f9f9;
+  --secondary-color: #000;
+  --accent-color: #e1e2e3;
+  --primary: #49bfc1;
+  --secondary: #D3FFFF;
+  --accent: #42F7FA;
+}
+
+  
+
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
         }
+        
 
         h1 {
             text-align: center;
+            background: var(--accent-color);
+            padding: 15px;
+            margin: .500rem;
+            box-shadow: 10px 10px black;
+            border-radius: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
         }
 
         section {
-            margin-bottom: 30px;
+            margin-bottom: 70px;
         }
+        
+        
+                #community-testimonials #testimonialList #testimonial1, #testimonial2 {
+                  margin: 25px 0 25px 0;
+                }
+        
+        #community-testimonials #testimonialList #testimonial1 div{
+          display: flex;
+          align-items: center;
+          
+        } 
+        #community-testimonials #testimonialList #testimonial2 div{
+          display: flex;
+          align-items: center;
+          
+        }
+        
+                #community-testimonials #testimonialList #testimonial1 div img {
+                  width: 50px;
+                  border-radius: 50px;
+                  padding: 5px;
+                  border: 3.5px solid black;
+                  margin: 0 5px 0 0;
+                }
+                
+                                #community-testimonials #testimonialList #testimonial2 div img {
+                  width: 50px;
+                  border-radius: 50px;
+                  padding: 5px;
+                  border: 3.5px solid var(--primary);
+                  margin: 0 5px 0 0;
+                }
+                
+                            #community-testimonials #testimonialList #testimonial1 p {
+                              background: var(--accent);
+                              padding: 10px;
+                              margin: 5px 0 30px 0;
+                              box-shadow: 8px 10px black;
+                            }
+             
+                                         #community-testimonials #testimonialList #testimonial2 p {
+                              background: var(--secondary);
+                              padding: 10px;
+                              margin: 5px 0 30px 0;
+                              box-shadow: 8px 10px black;
+                            }  
+                            
+                            #community-testimonials #addTestimonial button{
+                              padding: 15px 15px;
+  border-radius: 15px;
+  margin: .780rem 0;
+  background: var(--primary);
+  border: none;
+  color: #000000;
+  transition: all .34s ease;
+                            }
+                                                        #community-testimonials #addTestimonial button:hover {
+ transform: translateY(-10%);
+  box-shadow: 5px 5px 25px #A0FDFF;
+                                                        }
+
 
         h2 {
             font-size: 1.5em;
             border-bottom: 1px solid #ccc;
             padding-bottom: 5px;
+            margin: 50px 0 50px 0;
         }
 
         ul {
@@ -69,17 +165,32 @@
           border-radius: 5px;
           border: none;
         }
+        
+        
+        a.goBack, i{
+padding: 15px 15px;
+  border-radius: 15px;
+  margin: .780rem 0;
+  background: var(--primary);
+  border: none;
+  color: #000000;
+  transition: all .34s ease;
+        }
+        
+        a.goBack:hover {
+          transform: translateY(-10%);
+  box-shadow: 5px 5px 25px #A0FDFF;
+        }
     </style>
 </head>
 <body>
 
     <h1>Welcome to Comdoc - Share and Learn!</h1>
-    <p>A feature by Comprove(indev)</p>
 
 
-    <section>
-        <h2>Community Testimonials</h2>
-        <button onclick="openModal()">Add Testimonial</button>
+    <section id="community-testimonials">
+        <h2 id="hero-title">Community Testimonials</h2>
+
 
         <div id="testimonialModal" class="modal">
             <div class="modal-content">
@@ -90,17 +201,36 @@
             </div>
         </div>
 
-        <ul id="testimonialList">
-            <li>
-                <h3>User Testimonial 1</h3>
+
+          <div id="testimonial-wrapper">
+                    <ul id="testimonialList">
+                                              <li id="testimonial1">
+                          <div>                                                   <img src="/assets/testimonial1.jpg" alt="/assets/tes">
+                <h3>Anonymous123</h3>
+                          </div>
+
                 <p>"The Comdoc feature helped me understand various communication barriers and how to overcome them. Highly recommended!"</p>
             </li>
-            <li>
-                <h3>User Testimonial 2</h3>
+            
+
+            <li id="testimonial2">
+              <div>
+                <img src="assets/testimonial2.jpg" alt="assett">
+                <h3>Mike Perry</h3>
+              </div>
+
                 <p>"I found great insights about effective communication through the Comdoc community. Amazing resource!"</p>
             </li>
 
         </ul>
+            
+            <div id="addTestimonial">
+                <button onclick="openModal()">Add Testimonial</button>
+              
+            </div>
+          </div>
+
+
     </section>
 
 
@@ -135,7 +265,10 @@
                 <li><a href="https://engagedly.com/blog/how-to-communicate-effectively-in-the-workplace-for-introverts/">Communication Skills for Introverts for Workplace Success</a></li>
             </ul>
         </div>
+        
     </section>
+    
+                    <a href="index.html" class="goBack">Main Page</a>
 
     <script>
         function openModal() {
@@ -159,5 +292,3 @@
     </script>
 </body>
 </html>
-
-
